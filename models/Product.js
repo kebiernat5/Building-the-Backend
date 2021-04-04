@@ -16,7 +16,7 @@ Product.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    product_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -34,14 +34,13 @@ Product.init(
         key: 'id',
       },
     },
-    tag: {
+    stock: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    tag_name: {
-      type: DataTypes.STRING,
+      validate: {
+        isNumeric: true
+      },
+      defaultValue: 10,
     },
   },
   {
