@@ -27,13 +27,6 @@ Product.init(
         isDecimal: true
       }
     },
-    category_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'category',
-        key: 'id',
-      },
-    },
     stock: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -41,6 +34,13 @@ Product.init(
         isNumeric: true
       },
       defaultValue: 10,
+    },
+    category_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'category',
+        key: 'id',
+      },
     },
   },
   {
